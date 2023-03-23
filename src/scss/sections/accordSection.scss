@@ -1,0 +1,114 @@
+$color-blue: #3052d8;
+$color_textBlue: #08113f;
+
+.application {
+  margin-top: 60px;
+  & > h2 {
+    font-family: proximanova_bold;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+    color: $color_textBlue;
+    margin-bottom: 42px;
+  }
+}
+.applicationBtn {
+  display: flex;
+  align-items: center;
+  border: 1px solid $color-blue;
+  color: $color-blue;
+  margin: 40px auto;
+  padding: 20px;
+  background: transparent;
+  border-radius: 20px;
+  transition: box-shadow 0.2s ease-in;
+  font-size: 20px;
+  &:hover {
+    box-shadow: 0px 0px 5px $color_textBlue;
+  }
+  &:active {
+    color: #fff;
+    background: $color-blue;
+    box-shadow: none;
+  }
+}
+.accordionBtn {
+  font-family: proximanova_bold !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 22px !important;
+  line-height: 28px !important;
+  color: $color-blue !important;
+}
+.accordion-body {
+  font-family: proximanova_regular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  color: $color_textBlue;
+  li {
+    list-style-type: circle !important;
+    margin-left: 20px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.accordion-button::after {
+  width: 0 !important;
+}
+.accordion-button {
+  position: relative;
+  z-index: 0;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    right: -40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: $color-blue;
+    z-index: 10;
+  }
+  &.active {
+    .questionArrow {
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
+			@include adaptive-value('top', 25, 35, 1);
+      transform: rotate(-225deg);
+    }
+    .questionArrow.long {
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
+			@include adaptive-value('top', 25, 35, 1);
+      transform: rotate(-225deg);
+    }
+  }
+}
+.questionArrow {
+  position: absolute;
+  z-index: 10;
+  @include adaptive-value('top', 30, 40, 1);
+  right: -88px;
+  width: 15px;
+  height: 15px;
+  margin-right: 60px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(-45deg);
+  transition: all 0.1s ease-in;
+}
+.questionArrow.long {
+  top: 30px;
+  @include adaptive-value('top', 30, 50, 1);
+  right: -88px;
+}
+.applicationHeading {
+  @media screen and (max-width: 600px) {
+    font-size: 40px !important;
+  }
+}

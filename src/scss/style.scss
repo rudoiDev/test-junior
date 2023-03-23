@@ -1,0 +1,25 @@
+@import 'mixins.scss';
+@import 'fonts.scss';
+@import 'nullstyle.scss';
+@import 'sections/mainSection.scss';
+@import 'sections/cartsSection.scss';
+@import 'sections/accordSection.scss';
+
+body {
+	min-width: 350px;
+}
+
+.wrapper {
+  max-width: 1920px;
+  min-width: 380px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.mainHeading {
+  @include adaptive-value('font-size', 70, 35, 1);
+  font-family: proximanova_bold;
+  color: $color-blue;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}

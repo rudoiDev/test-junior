@@ -1,0 +1,83 @@
+$color-blue: #3052d8;
+$color_textBlue: #08113f;
+
+.accordion-header {
+  padding-right: 60px;
+}
+
+.questions {
+  p {
+    font-family: proximanova_extrabold;
+    font-weight: 800;
+		@include adaptive-value('font-size', 36, 24, 1);
+    line-height: 42px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: $color_textBlue;
+  }
+}
+.questionsHeading {
+  margin-top: 30px;
+  font-family: proximanova_bold;
+  font-weight: 800;
+  @include adaptive-value('font-size', 70, 32, 1);
+  line-height: 1.5em;
+  color: $color-blue;
+}
+.questionsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  @media screen and (max-width: 1500px) {
+    justify-content: center;
+  }
+  @media screen and (max-width: 600px) {
+    flex-wrap: nowrap;
+		justify-content: flex-start;
+    overflow: hidden;
+    overflow-x: visible;
+  }
+}
+.questionsItem {
+  position: relative;
+  flex: 1 0 200px;
+  height: 190px;
+  background: $color-blue;
+  border-radius: 10px;
+  padding: 14px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  &.active {
+    background: #e1e8f8;
+    * {
+      fill: #000;
+      color: #000;
+    }
+  }
+  @media screen and (max-width: 1500px) {
+    flex: 0 1 48%;
+  }
+  @media screen and (max-width: 600px) {
+    margin: 20px;
+    flex: 1 0 200px;
+  }
+  &:hover {
+    transform: scale(1.03);
+  }
+  p {
+    font-family: proximanova_regular;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px !important;
+    line-height: 28px;
+    color: #fff;
+  }
+}
+.svgIcon {
+  display: block;
+  width: 70px;
+  height: 70px;
+  fill: white;
+  margin-bottom: 20px;
+}
